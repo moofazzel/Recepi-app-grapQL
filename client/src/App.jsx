@@ -39,6 +39,10 @@ function App() {
   const allRecipesData = data.allRecipe || "No data found";
   const allRecipes = [...allRecipesData];
 
+  if (allRecipes.length === 0) {
+    return <p>No data found Please add some data</p>;
+  }
+
   const handleChange = (e) => {
     setRecipe({ ...recipe, [e.target.name]: e.target.value });
   };
